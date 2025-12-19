@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 81% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 81% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 81% 52%;
+
+    --radius: 0rem;
+
+    /* Custom tokens */
+    --header-height: 140px;
+    --topbar-height: 40px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight uppercase;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-4 font-heading font-semibold uppercase tracking-wider 
+           transition-all duration-300 hover:bg-primary/90 hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply border border-foreground/30 text-foreground px-8 py-4 font-heading font-semibold uppercase tracking-wider 
+           transition-all duration-300 hover:bg-foreground hover:text-background;
+  }
+
+  .nav-link {
+    @apply relative font-heading text-sm font-semibold uppercase tracking-wider text-foreground
+           transition-colors duration-300 hover:text-primary;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+
+  .section-title {
+    @apply font-heading text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight;
+  }
+
+  .product-card {
+    @apply bg-card border border-border/50 overflow-hidden cursor-pointer
+           transition-all duration-500 hover:border-primary/50;
+  }
+
+  .product-card-image {
+    @apply w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110;
+  }
+
+  .category-tag {
+    @apply text-xs font-body uppercase tracking-widest text-muted-foreground;
+  }
+
+  .price-tag {
+    @apply font-heading text-xl font-bold text-primary;
+  }
+
+  .icon-btn {
+    @apply w-10 h-10 flex items-center justify-center border border-border/50 
+           transition-all duration-300 hover:bg-primary hover:border-primary;
+  }
+
+  .search-input {
+    @apply bg-transparent border-0 outline-none text-foreground placeholder:text-muted-foreground 
+           w-full font-body text-sm;
+  }
+
+  .select-field {
+    @apply bg-transparent border border-border px-6 py-4 font-heading text-sm uppercase tracking-wider
+           text-foreground appearance-none cursor-pointer transition-all duration-300 hover:border-primary;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth scrolling with Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
