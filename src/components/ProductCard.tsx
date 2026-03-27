@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { Heart, ArrowLeftRight, Eye, MessageCircle } from "lucide-react"; // Added MessageCircle
+import React from "react";
 
 interface ProductCardProps {
   image: string;
@@ -7,78 +6,58 @@ interface ProductCardProps {
   title: string;
   price: string;
   originalPrice?: string;
-  delay?: number;
 }
 
-const ProductCard = ({ image, category, title, price, originalPrice, delay = 0 }: ProductCardProps) => {
-
-  // LOGIC: WhatsApp Inquiry Handler
-  const handleInquiry = () => {
-    const message = encodeURIComponent(`Hi Revoro, I am interested in: ${title}`);
-    window.open(`https://wa.me/971500000000?text=${message}`, '_blank'); // Replace with your number
-  };
-
+const ProductCard = ({
+  image,
+  title,
+  price,
+  originalPrice,
+  category,
+}: ProductCardProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-      className="product-card group border border-border/20"
-    >
-      {/* Image Container */}
-      <div className="relative overflow-hidden bg-card aspect-square">
+    <div className="bg-card border border-border rounded-xl p-4 flex gap-4 hover:shadow-md transition-all duration-300">
+      
+      {/* Product Image */}
+      <div className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
         <img
           src={image}
           alt={title}
-          className="product-card-image object-cover w-full h-full"
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
         />
-
-        {/* Quick Actions - Use for View Details or Wishlist UI feel */}
-        <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-          <button className="icon-btn bg-background/80 backdrop-blur-sm ">
-            <Heart className="w-4 h-4" />
-          </button>
-          <button className="icon-btn bg-background/80 backdrop-blur-sm ">
-            <Eye className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Action Button - Pivoted to Inquiry instead of Cart */}
-        <div className="absolute bottom-0 left-0 right-0 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-          <button
-            onClick={handleInquiry}
-            className="w-full bg-primary text-primary-foreground py-3 font-heading text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
-          >
-            <MessageCircle className="w-4 h-4" />
-            Check Availability
-          </button>
-        </div>
       </div>
 
-      {/* Content */}
-      <div className="p-6">
-        <p className="category-tag mb-2 text-primary/80 font-medium text-xs tracking-widest">{category}</p>
-        <h3 className="font-heading text-lg font-semibold uppercase tracking-wide mb-3 group-hover:text-primary transition-colors line-clamp-2">
-          {title}
-        </h3>
+      {/* Product Content */}
+      <div className="flex flex-col justify-between flex-1">
+        
+        <div>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider">
+            {category}
+          </p>
 
-        {/* <div className="flex items-center gap-3">
-          <span className="price-tag font-bold">{price}</span>
+          <h3 className="font-heading text-sm font-semibold leading-snug mt-1">
+            {title}
+          </h3>
+        </div>
+
+        <div className="flex items-center gap-2 mt-2">
+          <span className="text-foreground font-semibold text-sm">
+            {price}
+          </span>
+
           {originalPrice && (
-            <span className="text-muted-foreground line-through text-sm">{originalPrice}</span>
+            <span className="text-xs line-through text-muted-foreground">
+              {originalPrice}
+            </span>
           )}
-        </div> 
-        */}
-
-        {/* Status Tag - Good for non-ecommerce catalog */}
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-[10px] uppercase text-muted-foreground tracking-tighter">In Stock - Al Quoz Branch</span>
         </div>
+
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 export default ProductCard;
+
+
+
