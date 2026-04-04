@@ -1,5 +1,17 @@
 import { useState } from "react";
-import { Menu, X, Headphones, MapPin, Phone } from "lucide-react";
+import {
+  Menu,
+  X,
+  Headphones,
+  MapPin,
+  Phone,
+  Facebook,
+  Instagram,
+  InstagramIcon,
+  Twitter,
+  MessageSquareQuote,
+  ArrowRight,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
@@ -36,18 +48,57 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Call Us & Store Location */}
-          <div className="flex items-center gap-3 md:gap-8 px-3 md:px-6 lg:px-12">
+          {/* Right Side: Socials, Phone & Location */}
+          <div className="flex items-center gap-4 md:gap-8 px-3 md:px-6 lg:px-12">
+            {/* Social Icons - Hidden on very small screens */}
+            <div className="hidden lg:flex items-center gap-3 border-r border-border/50 pr-6">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <InstagramIcon className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Call Us */}
             <div className="flex items-center gap-1 md:gap-2 text-xs md:text-sm font-body">
               <Phone className="w-3 h-3 md:w-4 md:h-4 text-primary" />
-              <span className="hidden sm:inline text-muted-foreground">CALL US:</span>
-              <a href="tel:00987513024008" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a
+                href="tel:00987513024008"
+                className="text-foreground hover:text-primary transition-colors font-medium"
+              >
                 0098 751 30 2408
               </a>
             </div>
-            <a href="#" className="flex items-center gap-1 md:gap-2 text-xs md:text-sm font-body text-muted-foreground hover:text-primary transition-colors">
-              <MapPin className="w-3 h-3 md:w-4 md:h-4" />
-              <span className="hidden sm:inline">STORE LOCATOR</span>
+
+            {/* Meaningful Location Link */}
+            <a
+              href="https://maps.google.com/?q=Al+Quoz+Dubai" // Replace with actual Google Maps link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 md:gap-2 text-xs md:text-sm font-body text-muted-foreground hover:text-primary transition-colors group"
+            >
+              <MapPin className="w-3 h-3 md:w-4 md:h-4 text-primary group-hover:animate-bounce" />
+              <div className="flex flex-col leading-tight">
+                <span className="hidden sm:block text-[10px] uppercase opacity-70">
+                  Our Location
+                </span>
+                <span className="font-semibold text-foreground group-hover:text-primary">
+                  Al Quoz, Dubai
+                </span>
+              </div>
             </a>
           </div>
         </div>
@@ -68,14 +119,18 @@ const Header = () => {
               ))}
             </ul>
 
-            <a href="#" className="hidden md:flex items-center gap-2 nav-link group">
-              CONTACT US
+            {/* Primary Action Button: Get a Quote */}
+            <a
+              href="#quote-form"
+              className="hidden md:flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2 rounded-sm font-bold text-sm tracking-wide hover:bg-primary/90 transition-all group"
+            >
+              GET A QUOTE
               <motion.span
                 className="inline-block"
-                whileHover={{ x: 5 }}
+                whileHover={{ x: 3 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                →
+                <ArrowRight className="w-4 h-4" />
               </motion.span>
             </a>
           </div>
@@ -93,7 +148,9 @@ const Header = () => {
           >
             <div className="container py-8">
               <div className="flex justify-between items-center mb-12">
-                <span className="font-heading text-2xl font-bold text-primary">REVORO</span>
+                <span className="font-heading text-2xl font-bold text-primary">
+                  REVORO
+                </span>
                 <button onClick={() => setIsMenuOpen(false)}>
                   <X className="w-8 h-8" />
                 </button>
