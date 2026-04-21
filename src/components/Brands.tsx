@@ -12,7 +12,7 @@ const manufacturers = [
   },
   {
     name: "Mercedes",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/2048px-Mercedes-Logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg"
   },
   {
     name: "Audi",
@@ -100,11 +100,10 @@ const Brands = () => {
                 ref={(el) => (itemRefs.current[index] = el)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`flex items-center justify-center w-32 h-16 cursor-pointer transition-all duration-500 ${
-                  isActive
+                className={`flex items-center justify-center w-32 h-16 cursor-pointer transition-all duration-500 ${isActive
                     ? "grayscale-0 opacity-100 scale-110"
                     : "grayscale opacity-40 scale-100"
-                }`}
+                  }`}
               >
                 <img
                   src={brand.logo}
