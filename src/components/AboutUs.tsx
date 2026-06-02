@@ -26,12 +26,12 @@ const AboutUs = () => {
                         performance, and long-lasting value.
                     </p>
 
-                    <button
-                        onClick={() => window.location.href = "/about"}
-                        className="inline-block px-8 py-3 bg-primary text-white rounded-md"
+                    <Link
+                        to="/about"
+                        className="inline-block mt-10 px-8 py-3 bg-primary text-white rounded-md font-semibold hover:opacity-90 transition"
                     >
                         Read More
-                    </button>
+                    </Link>
 
                 </div>
 
