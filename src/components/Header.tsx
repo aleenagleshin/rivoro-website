@@ -65,13 +65,19 @@ const Header = () => {
           </div>
 
           {/* 🔶 Right Side */}
-         <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 px-4 md:px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6 px-4 md:px-6 lg:px-12">
 
-            <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-6">
+            {/* Socials → HIDDEN on mobile (fix) */}
+            <div className="hidden md:flex items-center gap-3 border-r border-border/50 pr-6">
               <a href="#" className="text-muted-foreground hover:text-primary">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://www.instagram.com/riveroautoparts/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/riveroautoparts/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary"
+              >
                 <InstagramIcon className="w-4 h-4" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary">
@@ -79,7 +85,9 @@ const Header = () => {
               </a>
             </div>
 
+            {/* Phone + Address */}
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
+
               <div className="flex items-center gap-2 text-sm">
                 <Phone className="w-4 h-4 text-primary" />
                 <span className="font-medium">+971 4 547 7977</span>
@@ -96,6 +104,7 @@ const Header = () => {
                   AL QUOZ 4, 16D st DUBAI, UAE
                 </span>
               </a>
+
             </div>
 
           </div>
