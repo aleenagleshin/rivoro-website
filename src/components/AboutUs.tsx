@@ -5,7 +5,7 @@ const AboutUs = () => {
         <section className="bg-black py-28 relative overflow-hidden">
             <div className="container mx-auto px-6">
 
-                <div className="max-w-6xl mx-auto bg-zinc-900 border border-primary/20 rounded-lg p-12 md:p-16 text-center shadow-2xl">
+                <div className="relative z-10 max-w-6xl mx-auto bg-zinc-900 border border-primary/20 rounded-lg p-12 md:p-16 text-center shadow-2xl">
 
                     <span className="text-primary uppercase tracking-[4px] font-semibold">
                         About Rivoro
@@ -28,7 +28,7 @@ const AboutUs = () => {
 
                     <Link
                         to="/about"
-                        className="inline-block mt-10 px-8 py-3 bg-primary text-white rounded-md font-semibold hover:opacity-90 transition"
+                        className="relative z-20 inline-block mt-10 px-8 py-3 bg-primary text-white rounded-md font-semibold hover:opacity-90 transition"
                     >
                         Read More
                     </Link>
@@ -38,8 +38,9 @@ const AboutUs = () => {
             </div>
 
             {/* Decorative Glow */}
-            <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary/10 blur-3xl"></div>
+            <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 blur-3xl pointer-events-none"></div>
+
+            <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary/10 blur-3xl pointer-events-none"></div>
         </section>
     );
 };
