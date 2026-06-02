@@ -15,11 +15,11 @@ import { Link } from "react-router-dom";
 import logo from "./assets/BLACK REVORO.png";
 
 const navItems = [
-  { label: "HOME", href: "#", active: true },
-  { label: "ABOUT", href: "#" },
-  { label: "BRANDS", href: "#" },
+  { label: "HOME", path: "/" },
+  { label: "ABOUT", path: "/about" },
+  /*{ label: "BRANDS", href: "#" },
   { label: "PRODUCTS", href: "#" },
-  { label: "CATALOG", href: "#" },
+  { label: "CATALOG", href: "#" },*/
 ];
 
 const Header = () => {
@@ -39,8 +39,8 @@ const Header = () => {
     <>
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
-            ? "bg-background/95 backdrop-blur-md shadow-md"
-            : "bg-background"
+          ? "bg-background/95 backdrop-blur-md shadow-md"
+          : "bg-background"
           }`}
       >
         {/* 🔶 Top Bar */}
@@ -61,9 +61,8 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Revoro Logo"
-               className={`object-contain transition-all duration-300 ${
-  isScrolled ? "h-12" : "h-20"
-}`}
+                className={`object-contain transition-all duration-300 ${isScrolled ? "h-12" : "h-20"
+                  }`}
               />
             </Link>
           </div>
@@ -104,13 +103,9 @@ const Header = () => {
             <ul className="hidden md:flex items-center gap-10">
               {navItems.map((item) => (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className={`nav-link ${item.active ? "active text-primary" : ""
-                      }`}
-                  >
+                  <Link to={item.path} className="nav-link">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -148,13 +143,13 @@ const Header = () => {
               <ul className="space-y-6">
                 {navItems.map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.path}
                       className="text-3xl font-bold hover:text-primary"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

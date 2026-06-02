@@ -10,6 +10,7 @@ import Brands from "@/components/Brands";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AboutUs from "@/components/AboutUs";
 
 const Index = () => {
   useSmoothScroll();
@@ -21,6 +22,7 @@ const Index = () => {
       <main>
         <HeroSlider />
        {/* <VehicleSearch /> */}
+        <AboutUs />
         <BestSellers />
         <PromoBanner />
         <CategoryShowcase />

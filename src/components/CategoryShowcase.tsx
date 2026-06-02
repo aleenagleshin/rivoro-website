@@ -1,79 +1,114 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-const categories = [
+const products = [
   {
     id: 1,
-    title: "Engine Parts",
-    count: "120+ Products",
-    image: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=800&q=80",
+    title: "Premium Engine Oil",
+    subtitle: "Fully Synthetic 5W-30",
+    image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=1200&q=80",
   },
   {
     id: 2,
-    title: "Wheels & Tires",
-    count: "85+ Products",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    title: "Brake System",
+    tag: "Safety",
+    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80",
   },
   {
     id: 3,
-    title: "Exterior",
-    count: "200+ Products",
+    title: "Alloy Wheels",
+    tag: "Performance",
+    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80",
+  },
+  {
+    id: 4,
+    title: "LED Headlights",
+    tag: "Upgrade",
     image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
   },
 ];
 
-const CategoryShowcase = () => {
+const PremiumShowcase = () => {
   return (
-    <section className="bg-secondary py-20 md:py-32">
-      <div className="container">
+    <section className="bg-background py-24">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+
+        {/* 🔥 LEFT - HERO PRODUCT */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          className="relative h-[520px] overflow-hidden group"
         >
-          <h2 className="section-title mb-4">Shop by Category</h2>
-          <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
-            Browse our extensive collection of automotive parts and accessories
-          </p>
+          <img
+            src={products[0].image}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+
+          <div className="absolute bottom-0 p-8">
+            <p className="text-primary text-sm mb-2">
+              {products[0].subtitle}
+            </p>
+
+            <h2 className="text-white text-3xl font-bold mb-4">
+              {products[0].title}
+            </h2>
+
+            <button className="flex items-center gap-2 text-sm uppercase tracking-wide text-white">
+              Explore
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {categories.map((category, index) => (
-            <motion.a
-              key={category.id}
-              href="#"
+        {/* 🔥 RIGHT - PRODUCT CARDS GRID */}
+        <div className="grid grid-cols-2 gap-6">
+
+          {products.slice(1).map((item, index) => (
+            <motion.div
+              key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative h-[400px] overflow-hidden"
+              transition={{ delay: index * 0.1 }}
+              className="group bg-secondary overflow-hidden hover:bg-secondary/70 transition-all"
             >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{ backgroundImage: `url(${category.image})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+
+              {/* Image */}
+              <div className="h-40 overflow-hidden">
+                <img
+                  src={item.image}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
 
               {/* Content */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <p className="category-tag text-primary mb-2">{category.count}</p>
-                <h3 className="font-heading text-2xl font-bold uppercase mb-4 group-hover:text-primary transition-colors">
-                  {category.title}
+              <div className="p-4">
+
+                {/* Tag */}
+                <p className="text-primary text-xs uppercase tracking-widest mb-2">
+                  {item.tag}
+                </p>
+
+                {/* Title */}
+                <h3 className="text-sm font-semibold mb-3 group-hover:text-primary transition">
+                  {item.title}
                 </h3>
-                <div className="flex items-center gap-2 text-sm font-heading uppercase tracking-wider opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  Explore
+
+                {/* CTA */}
+                <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground group-hover:text-primary transition">
+                  View Product
                   <ArrowRight className="w-4 h-4" />
                 </div>
+
               </div>
-            </motion.a>
+            </motion.div>
           ))}
+
         </div>
       </div>
     </section>
   );
 };
 
-export default CategoryShowcase;
+export default PremiumShowcase;
