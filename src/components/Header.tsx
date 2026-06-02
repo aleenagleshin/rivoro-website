@@ -95,7 +95,7 @@ const Header = () => {
               href="https://maps.google.com/?q=REVORO+AUTO+SPARE+PARTS+TRD+LLC"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
               <MapPin className="w-4 h-4 text-primary" />
               <span className="font-medium">

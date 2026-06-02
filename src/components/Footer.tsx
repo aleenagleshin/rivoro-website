@@ -7,7 +7,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  MessageCircle
 } from "lucide-react";
 const Footer = () => {
   return (
@@ -138,18 +137,6 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <a href="tel:+1234567890" className="font-body text-muted-foreground hover:text-primary transition-colors">
                   +971 4 547 7977
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <MessageCircle className="w-5 h-5 text-primary flex-shrink-0" />
-
-                <a
-                  href="https://wa.me/97145477977"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-body text-muted-foreground hover:text-primary transition-colors"
-                >
-                  WhatsApp: +971 56 872 7976
                 </a>
               </li>
               <li className="flex items-center gap-3">
