@@ -44,10 +44,8 @@ const Header = () => {
           }`}
       >
         {/* 🔶 Top Bar */}
-        <div
-          className={`flex items-center justify-between border-b border-border/30 transition-all duration-300 ${isScrolled ? "py-2" : "py-4"
-            }`}
-        >
+        <div className={`flex items-center justify-between border-b border-border/30 transition-all duration-300 ${isScrolled ? "py-2" : "py-4"}`}>
+
           {/* 🔥 Logo Section */}
           <div className="flex items-center px-4 md:px-6 lg:px-12">
             <button
@@ -61,24 +59,19 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Revoro Logo"
-                className={`object-contain transition-all duration-300 ${isScrolled ? "h-12" : "h-20"
-                  }`}
+                className={`object-contain transition-all duration-300 ${isScrolled ? "h-12" : "h-20"}`}
               />
             </Link>
           </div>
 
           {/* 🔶 Right Side */}
-          <div className="flex items-center gap-6 px-4 md:px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 px-4 md:px-6 lg:px-12">
+
             <div className="hidden lg:flex items-center gap-3 border-r border-border/50 pr-6">
               <a href="#" className="text-muted-foreground hover:text-primary">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a
-                href="https://www.instagram.com/riveroautoparts/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary"
-              >
+              <a href="https://www.instagram.com/riveroautoparts/" target="_blank" rel="noopener noreferrer">
                 <InstagramIcon className="w-4 h-4" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary">
@@ -86,30 +79,30 @@ const Header = () => {
               </a>
             </div>
 
-            <div className="flex items-center gap-2 text-sm">
-              <Phone className="w-4 h-4 text-primary" />
-              <span className="font-medium">+971 4 547 7977</span>
+            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6">
+              <div className="flex items-center gap-2 text-sm">
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="font-medium">+971 4 547 7977</span>
+              </div>
+
+              <a
+                href="https://maps.google.com/?q=REVORO+AUTO+SPARE+PARTS+TRD+LLC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary"
+              >
+                <MapPin className="w-4 h-4 text-primary" />
+                <span className="font-medium">
+                  AL QUOZ 4, 16D st DUBAI, UAE
+                </span>
+              </a>
             </div>
 
-            <a
-              href="https://maps.google.com/?q=REVORO+AUTO+SPARE+PARTS+TRD+LLC"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <MapPin className="w-4 h-4 text-primary" />
-              <span className="font-medium">
-                AL QUOZ 4, 16D st DUBAI, UAE
-              </span>
-            </a>
           </div>
         </div>
 
-        {/* 🔶 Navigation */}
-        <nav
-          className={`transition-all duration-300 ${isScrolled ? "py-3" : "py-6"
-            }`}
-        >
+        {/* 🔶 Navigation (OUTSIDE top bar now ✅) */}
+        <nav className={`transition-all duration-300 ${isScrolled ? "py-3" : "py-6"}`}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
             <ul className="hidden md:flex items-center gap-10">
@@ -124,13 +117,12 @@ const Header = () => {
 
             <a
               href="#quote-form"
-              className="hidden md:flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2 rounded-sm font-bold text-sm hover:bg-primary/90 transition-all"
+              className="hidden md:flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2 rounded-sm font-bold text-sm hover:bg-primary/90"
             >
               GET A QUOTE
-              <motion.span whileHover={{ x: 3 }}>
-                <ArrowRight className="w-4 h-4" />
-              </motion.span>
+              <ArrowRight className="w-4 h-4" />
             </a>
+
           </div>
         </nav>
       </header>
