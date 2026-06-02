@@ -73,7 +73,12 @@ const Header = () => {
               <a href="#" className="text-muted-foreground hover:text-primary">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary">
+              <a
+                href="https://www.instagram.com/riveroautoparts/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary"
+              >
                 <InstagramIcon className="w-4 h-4" />
               </a>
               <a href="#" className="text-muted-foreground hover:text-primary">
@@ -83,13 +88,20 @@ const Header = () => {
 
             <div className="flex items-center gap-2 text-sm">
               <Phone className="w-4 h-4 text-primary" />
-              <span className="font-medium">0098 751 30 2408</span>
+              <span className="font-medium">+971 4 547 7977</span>
             </div>
 
-            <div className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a
+              href="https://maps.google.com/?q=REVORO+AUTO+SPARE+PARTS+TRD+LLC"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
               <MapPin className="w-4 h-4 text-primary" />
-              <span className="font-medium">Al Quoz, Dubai</span>
-            </div>
+              <span className="font-medium">
+                AL QUOZ 4, 16D st DUBAI, UAE
+              </span>
+            </a>
           </div>
         </div>
 

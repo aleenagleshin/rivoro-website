@@ -8,7 +8,7 @@ const TopBar = () => {
           <Headphones className="w-4 h-4 text-muted-foreground" />
           <span className="text-muted-foreground">CALL CENTER:</span>
           <a href="tel:00987513024008" className="text-foreground hover:text-primary transition-colors">
-            0098 751 30 2408
+            +971 4 547 7977
           </a>
         </div>
 

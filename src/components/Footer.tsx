@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Instagram, Youtube, MapPin, Phone, Mail, Car } from "lucide-react";
-
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Youtube,
+  MapPin,
+  Phone,
+  Mail,
+  MessageCircle
+} from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-secondary pt-20 pb-8">
@@ -31,15 +39,37 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram, Youtube].map((Icon, index) => (
+              <div className="flex gap-4">
                 <a
-                  key={index}
                   href="#"
                   className="w-10 h-10 flex items-center justify-center border border-border/50 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
                 >
-                  <Icon className="w-4 h-4" />
+                  <Facebook className="w-4 h-4" />
                 </a>
-              ))}
+
+                <a
+                  href="#"
+                  className="w-10 h-10 flex items-center justify-center border border-border/50 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                >
+                  <Twitter className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/riveroautoparts/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center border border-border/50 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="#"
+                  className="w-10 h-10 flex items-center justify-center border border-border/50 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                >
+                  <Youtube className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </motion.div>
 
@@ -90,22 +120,42 @@ const Footer = () => {
           >
             <h4 className="font-heading text-lg font-bold uppercase mb-6">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="font-body text-muted-foreground">
-                  123 Motor Street, Auto City, CA 90210
-                </span>
+              <li>
+                <a
+                  href="https://maps.google.com/?q=REVORO+AUTO+SPARE+PARTS+TRD+LLC"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group"
+                >
+                  <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+
+                  <span className="font-body text-muted-foreground group-hover:text-primary transition-colors">
+                    AL QUOZ 4, 16D st DUBAI, UAE
+                  </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <a href="tel:+1234567890" className="font-body text-muted-foreground hover:text-primary transition-colors">
-                  +1 (234) 567-890
+                  +971 4 547 7977
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MessageCircle className="w-5 h-5 text-primary flex-shrink-0" />
+
+                <a
+                  href="https://wa.me/97145477977"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body text-muted-foreground hover:text-primary transition-colors"
+                >
+                  WhatsApp: +971 56 872 7976
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@revoro.com" className="font-body text-muted-foreground hover:text-primary transition-colors">
-                  info@revoro.com
+                <a href="mailto: revoroautoparts@gmail.com" className="font-body text-muted-foreground hover:text-primary transition-colors">
+                  revoroautoparts@gmail.com
                 </a>
               </li>
             </ul>
