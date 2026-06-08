@@ -33,7 +33,7 @@ const slides = [
     description:
       "From bumpers to lighting systems, perfectly fitted for your vehicle model.",
     image:
-      "https://images.unsplash.com/photo-1502877338535-766e14526847?w=1920&q=80", // Dark car silhouette/body
+      "https://www.pinterest.com/pin/black-car-silhouette-wallpaper-super-cool-design--837458493246207539/", // Dark car silhouette/body
   },
   {
     id: 4,

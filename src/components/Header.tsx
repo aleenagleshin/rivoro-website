@@ -59,7 +59,10 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Revoro Logo"
-                className={`object-contain transition-all duration-300 ${isScrolled ? "h-12" : "h-20"}`}
+                className={`object-contain transition-all duration-350
+                 h-24 md:h-30 lg:h-28
+                 ${isScrolled ? "h-12 md:h-16 lg:h-18" : ""}
+                 `}
               />
             </Link>
           </div>

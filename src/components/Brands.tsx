@@ -34,6 +34,35 @@ const manufacturers = [
     name: "Nissan",
     logo: "https://cdn.worldvectorlogo.com/logos/nissan-6.svg",
   },
+    // 🔥 EV / Chinese brands (Dubai trending)
+  {
+    name: "Tesla",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
+  },
+  {
+    name: "BYD",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/BYD_Auto_Logo.svg",
+  },
+  {
+    name: "JAC Motors",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/JAC_Motors_logo.svg",
+  },
+  {
+    name: "Jetour",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Jetour_logo.png",
+  },
+  {
+    name: "Chery",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Chery_logo.svg",
+  },
+  {
+    name: "Geely",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Geely_logo.svg",
+  },
+  {
+    name: "MG Motors",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/7/7f/MG_Motor_logo.svg",
+  },
 ];
 
 const Brands = () => {
@@ -75,17 +104,28 @@ const Brands = () => {
   }, []);
 
   return (
-    <section className="bg-background py-12 border-y border-border/30 overflow-hidden relative">
-      {/* Gradient Fade */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+    <section className="bg-background py-20 md:py-28 border-y border-border/30 overflow-hidden relative">
 
-      <div ref={containerRef} className="flex overflow-hidden">
+      {/* Gradient Fade */}
+      <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+
+      {/* Title (optional but makes it premium) */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+          Trusted Brands
+        </h2>
+        <p className="text-muted-foreground mt-2">
+          We supply genuine parts from world-class manufacturers
+        </p>
+      </div>
+
+      <div ref={containerRef} className="flex overflow-visible">
         <motion.div
-          className="flex gap-16 items-center whitespace-nowrap"
+          className="flex gap-24 items-center whitespace-nowrap py-10"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
-            duration: 25,
+            duration: 28,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -100,16 +140,18 @@ const Brands = () => {
                 ref={(el) => (itemRefs.current[index] = el)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`flex items-center justify-center w-32 h-16 cursor-pointer transition-all duration-500 ${isActive
-                    ? "grayscale-0 opacity-100 scale-110"
-                    : "grayscale opacity-40 scale-100"
+                className={`flex items-center justify-center w-44 h-28 md:w-52 md:h-32 cursor-pointer transition-all duration-500 relative ${isActive
+                  ? "grayscale-0 opacity-100 scale-125 z-20"
+                  : "grayscale opacity-40 scale-100"
                   }`}
               >
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="max-w-full max-h-full object-contain"
-                />
+                <div className="w-full h-full flex items-center justify-center overflow-visible">
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="h-full w-full object-contain transform-gpu"
+                  />
+                </div>
               </div>
             );
           })}
