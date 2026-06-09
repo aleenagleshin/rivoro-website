@@ -9,6 +9,10 @@ import {
 } from "lucide-react";
 import OilImage from "../components/assets/oil_filter_Hero_imae.png";
 import PistonImage from "../components/assets/PISTON_HERO_IMAGE.png";
+import BodyImage from "../components/assets/BodyImage.png";
+import InteriorImage from "../components/assets/InteriorImage.png";
+import SuspensionImage from "../components/assets/SuspensionImage.png";
+
 const slides = [
   {
     id: 1,
@@ -16,7 +20,7 @@ const slides = [
     title: "Premium Engine Oils & Filters",
     description:
       "Extend your engine life with our synthetic range and high-flow filtration systems.",
-    image: OilImage, // Dark oil/mechanical theme
+    image: OilImage,
   },
   {
     id: 2,
@@ -24,7 +28,7 @@ const slides = [
     title: "Genuine Engine & Transmission Parts",
     description:
       "Cylinder heads, pistons, and gear components for maximum reliability.",
-    image: PistonImage, // Dark engine part
+    image: PistonImage,
   },
   {
     id: 3,
@@ -32,8 +36,7 @@ const slides = [
     title: "Body Parts & Styling Components",
     description:
       "From bumpers to lighting systems, perfectly fitted for your vehicle model.",
-    image:
-      "https://www.pinterest.com/pin/black-car-silhouette-wallpaper-super-cool-design--837458493246207539/", // Dark car silhouette/body
+    image: BodyImage,
   },
   {
     id: 4,
@@ -41,8 +44,7 @@ const slides = [
     title: "Chinese Brand Specialist Accessories",
     description:
       "Premium interior upgrades and exterior accessories for all major Chinese brands.",
-    image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80", // Luxury dark interior
+    image: InteriorImage,
   },
   {
     id: 5,
@@ -50,8 +52,7 @@ const slides = [
     title: "Suspension & Braking Systems",
     description:
       "Heavy-duty shock absorbers, brake pads, and steering components.",
-    image:
-      "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&q=80", // Dark workshop/parts
+    image: SuspensionImage,
   },
 ];
 

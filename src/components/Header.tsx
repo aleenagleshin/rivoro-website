@@ -25,26 +25,44 @@ const navItems = [
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   // 🔥 Detect scroll
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+      setIsCollapsed(window.scrollY > 120); // collapse later
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
-      <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md"
-          : "bg-background"
-          }`}
+
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-background/95 backdrop-blur-md shadow-md"
+        : "bg-background"
+        }`}
       >
+        {/* glow */}
+        <div className="absolute inset-0 pointer-events-none -z-10">
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-orange-500/10 blur-[120px]" />
+        </div>
+
+        {/* grid */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('/grid.svg')] pointer-events-none" />
+
+        {/* brand watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+          <h1 className="text-[120px] font-black text-white/5 tracking-[0.3em]">
+            REVORO
+          </h1>
+        </div>
         {/* 🔶 Top Bar */}
-        <div className={`flex items-center justify-between border-b border-border/30 transition-all duration-300 ${isScrolled ? "py-2" : "py-4"}`}>
+        <div className={`relative z-10 flex items-center justify-between transition-all duration-300 ${isScrolled ? "py-1" : "py-2"}`}>
 
           {/* 🔥 Logo Section */}
           <div className="flex items-center px-4 md:px-6 lg:px-12">
@@ -60,7 +78,7 @@ const Header = () => {
                 src={logo}
                 alt="Revoro Logo"
                 className={`object-contain transition-all duration-350
-                 h-24 md:h-30 lg:h-28
+                 h-20 md:h-24 lg:h-26
                  ${isScrolled ? "h-12 md:h-16 lg:h-18" : ""}
                  `}
               />
@@ -114,7 +132,7 @@ const Header = () => {
         </div>
 
         {/* 🔶 Navigation (OUTSIDE top bar now ✅) */}
-        <nav className={`transition-all duration-300 ${isScrolled ? "py-3" : "py-6"}`}>
+        <nav className={`transition-all duration-300 ${isScrolled ? "py-2" : "py-3"}`}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
             <ul className="hidden md:flex items-center gap-10">

@@ -2,7 +2,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ShieldCheck, Package, Headphones } from "lucide-react";
 import aboutImage from "@/components/assets/about-workshop.jpg";
+import { useState } from "react";
 const About = () => {
+  const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
   return (
     <>
       <Header />
@@ -175,24 +178,110 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-primary py-20 text-center text-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-4">
-            Need Quality Automotive Parts?
-          </h2>
+      {/* PREMIUM CTA - WhatsApp FORM */}
+      <section className="relative py-28 text-white overflow-hidden">
 
-          <p className="max-w-2xl mx-auto mb-8 text-lg">
-            Connect with our team today and discover reliable solutions
-            tailored to your automotive needs.
-          </p>
+        {/* BACKGROUND LAYERS */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-black" />
 
-          <a
-            href="/#quote-form"
-            className="inline-block bg-black px-8 py-3 rounded-md font-semibold hover:opacity-90 transition"
-          >
-            Request a Quote
-          </a>
+        {/* orange glow left */}
+        <div className="absolute left-[-120px] top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-500/10 blur-[160px] rounded-full" />
+
+        {/* orange glow right */}
+        <div className="absolute right-[-150px] top-1/4 w-[500px] h-[700px] bg-orange-600/20 blur-3xl rotate-12" />
+
+        {/* bottom glow */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-orange-500/10 blur-[140px]" />
+
+        {/* grid overlay */}
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('/grid.svg')]" />
+
+        {/* CONTENT */}
+        <div className="relative z-10 container mx-auto px-6">
+
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+            {/* LEFT SIDE TEXT */}
+            <div className="text-left">
+              <span className="text-orange-400 uppercase tracking-[4px] font-semibold">
+                Quick Support
+              </span>
+
+              <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
+                Need Premium <span className="text-orange-500">Automotive Parts?</span>
+              </h2>
+
+              <p className="text-gray-400 text-lg leading-8">
+                Share your requirement and connect instantly with our team on WhatsApp.
+                We respond with fast and reliable solutions.
+              </p>
+            </div>
+
+            {/* RIGHT SIDE FORM */}
+            <div className="w-full max-w-xl mx-auto">
+
+              <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
+
+                {/* glow border effect */}
+                <div className="absolute inset-0 rounded-2xl border border-orange-500/10 pointer-events-none" />
+
+                {/* TITLE */}
+                <h3 className="text-xl font-semibold mb-6 text-center text-white">
+                  Send Your Requirement
+                </h3>
+
+                {/* NAME INPUT */}
+                <div className="relative mb-5">
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="peer w-full px-4 pt-5 pb-2 bg-black/40 border border-white/10 rounded-lg text-white outline-none focus:border-orange-500 transition"
+                    placeholder=" "
+                  />
+                  <label className="absolute left-4 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-orange-400">
+                    Your Name
+                  </label>
+                </div>
+
+                {/* DESCRIPTION */}
+                <div className="relative mb-6">
+                  <textarea
+                    value={desc}
+                    onChange={(e) => setDesc(e.target.value)}
+                    className="peer w-full px-4 pt-5 pb-2 h-32 bg-black/40 border border-white/10 rounded-lg text-white outline-none focus:border-orange-500 transition resize-none"
+                    placeholder=" "
+                  />
+                  <label className="absolute left-4 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-orange-400">
+                    Describe your requirement
+                  </label>
+                </div>
+
+                {/* BUTTON */}
+                <button
+                  onClick={() => {
+                    if (!name || !desc) {
+                      alert("Please fill all fields");
+                      return;
+                    }
+
+                    const phone = "97145477977";
+
+                    const message = `Hello, I am ${name}\nRequirement: ${desc}`;
+
+                    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+                    window.open(url, "_blank");
+                  }}
+                  className="w-full py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-600 transition-all shadow-lg shadow-orange-500/20 hover:scale-[1.02] duration-200"
+                >
+                  Send on WhatsApp
+                </button>
+
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
