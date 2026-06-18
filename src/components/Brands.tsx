@@ -115,11 +115,10 @@ const Brands = () => {
                 ref={(el) => (itemRefs.current[index] = el)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className={`flex items-center justify-center w-44 h-28 md:w-52 md:h-32 transition-all duration-500 ${
-                  isActive
-                    ? "grayscale-0 opacity-100 scale-125 z-20"
-                    : "grayscale opacity-40 scale-100"
-                }`}
+                className={`flex items-center justify-center w-32 h-20 md:w-40 md:h-24 transition-all duration-500 ${isActive
+                  ? "grayscale-0 opacity-100 scale-105 z-20"
+                  : "grayscale opacity-40 scale-100"
+                  }`}
               >
                 <img
                   src={brand.logo}
