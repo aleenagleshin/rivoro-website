@@ -14,7 +14,7 @@ const About = () => {
       <section className="bg-black text-white py-24">
         <div className="container mx-auto px-6 text-center">
           <span className="text-primary uppercase tracking-[4px] font-semibold">
-            About Rivoro
+            About REVORO
           </span>
 
           <h1 className="text-5xl md:text-6xl font-bold mt-4 mb-6">
@@ -24,7 +24,7 @@ const About = () => {
           <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
 
           <p className="max-w-3xl mx-auto text-lg text-gray-300 leading-8">
-            Rivoro is a trusted supplier of premium automotive spare parts
+            REVORO is a trusted supplier of premium automotive spare parts
             and accessories, delivering quality products and dependable
             service for workshops, fleet operators, and vehicle owners.
           </p>
@@ -48,7 +48,7 @@ const About = () => {
               </h2>
 
               <p className="text-gray-400 leading-8 mb-6">
-                Rivoro was founded with a clear vision to provide high-quality
+                REVORO was founded with a clear vision to provide high-quality
                 automotive spare parts and accessories through a customer-focused
                 approach built on reliability, transparency, and long-term value.
               </p>
@@ -66,7 +66,7 @@ const About = () => {
               <div className="relative overflow-hidden rounded-xl h-[450px] border border-primary/30 shadow-2xl">
                 <img
                   src={aboutImage}
-                  alt="Rivoro Automotive Workshop"
+                  alt="REVORO Automotive Workshop"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -128,7 +128,7 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-primary uppercase tracking-wider font-semibold">
-              Why Rivoro
+              Why REVORO
             </span>
 
             <h2 className="text-4xl font-bold mt-3">

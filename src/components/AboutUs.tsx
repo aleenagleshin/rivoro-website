@@ -8,7 +8,7 @@ const AboutUs = () => {
                 <div className="relative z-10 max-w-6xl mx-auto bg-zinc-900 border border-primary/20 rounded-lg p-12 md:p-16 text-center shadow-2xl">
 
                     <span className="text-primary uppercase tracking-[4px] font-semibold">
-                        About Rivoro
+                        About REVORO
                     </span>
 
                     <h2 className="text-white text-4xl md:text-5xl font-bold mt-4 mb-8">
@@ -19,7 +19,7 @@ const AboutUs = () => {
                     <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
 
                     <p className="text-gray-300 text-lg leading-9 max-w-4xl mx-auto">
-                        Rivoro is your trusted destination for premium automotive
+                        REVORO is your trusted destination for premium automotive
                         spare parts and accessories. We provide genuine products,
                         dependable service, and industry expertise to workshops,
                         businesses, and vehicle owners who demand reliability,
