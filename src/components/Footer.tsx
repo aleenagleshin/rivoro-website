@@ -55,7 +55,7 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/riveroautoparts/"
+                  href="https://www.instagram.com/revoroautospare?utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 flex items-center justify-center border border-border/50 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"

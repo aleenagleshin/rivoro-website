@@ -132,7 +132,7 @@ const Header = () => {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/riveroautoparts/"
+                  href="https://www.instagram.com/revoroautospare?utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary"
